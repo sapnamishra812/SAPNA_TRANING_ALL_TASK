@@ -1,0 +1,24 @@
+<div class="container" >
+  <div class="row mt-5">
+    <h3> Child Component</h3>
+     <form [formGroup]="formGroupUpdate" (ngSubmit)="updateForm()">
+         <div class="col-8 mt-2 mb-2">
+            <input type="text" class="form-control" formControlName="first_name"/>
+         </div>
+         <div class="col-8 mt-2 mb-">
+          <input type="text" class="form-control" formControlName="last_name"/>
+         </div>
+        <div class="col-8 mt-2 mb-">
+          <input type="text" class="form-control" formControlName="email"/>
+        </div>
+        <div class="col-8">
+          <input type="text" class="form-control" formControlName="avatar"/>
+        </div>
+        <div class="col-8 mt-2 mb-">
+          <input type="text" class="form-control" formControlName="job"/>
+        </div>
+     <button type="submit" class="btn btn-primary btn-sm mt-4">Update</button>
+     </form>
+  </div>
+
+</div>

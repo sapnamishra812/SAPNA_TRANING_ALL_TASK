@@ -1,0 +1,32 @@
+<p>dashboard works!</p>
+ <!-- <button (click)="checkApi()">CheckApiData</button> -->
+
+<p-table [value]="users" (click)="checkApi()">
+  <ng-template pTemplate="header" styleClass="p-datatable-striped" responsiveLayout="scroll">
+      <tr>
+          <th>id</th>
+          <th>email</th>
+          <th>first_name</th>
+          <th>last_name</th>
+          <th>avatar</th>
+          <th>action</th>
+          <th>job</th>
+          <th>action2</th>
+      </tr>
+  </ng-template>
+  <ng-template pTemplate="body" let-car>
+      <tr>
+          <td>{{car.id}}</td>
+          <td>{{car.email}}</td>
+          <td>{{car.first_name}}</td>
+          <td>{{car.last_name}}</td>
+          <td>{{car.avatar}}</td>
+          <td [routerLink]="['/edit',car.id]" routerLinkActi ve="router-link-active" ><i class="pi pi-bars"></i></td>
+          <td>{{car.job}}</td>
+          <td (click)="showChildComponent(car)"><i class="pi pi-reply"></i></td>
+      </tr>
+  </ng-template>
+</p-table>
+<div *ngIf="hidden">
+  <app-child-page [Name]="showToChild" (getupdateChild)="getupdateChildeForm($event)" ></app-child-page>
+</div>

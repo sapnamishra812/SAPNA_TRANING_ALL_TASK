@@ -1,0 +1,29 @@
+<div class="container">
+  <h3>Register Form </h3>
+  <form [formGroup]="formGroup" (ngSubmit)='postData()'>
+       <div class="row mt-3">
+          <div class="form-group col-sm-12 col-md-8 mb-2">
+              <input type="text" class="form-control" id="name" placeholder="Enter name" formControlName="name" >
+              <span  class="text-danger" *ngIf="submitFormCheck && formGroup.controls['name'].hasError('required')">Required Name</span>
+              <span  class="text-danger" *ngIf="submitFormCheck && formGroup.controls['name'].hasError('pattern')">Invalid </span>
+            </div>
+
+            <div class="form-group col-sm-12 col-md-8 mb-2">
+              <input type="date" class="form-control" id="dob" placeholder="Enter DOB" formControlName="dob">
+              <span  class="text-danger" *ngIf="submitFormCheck && formGroup.controls['dob'].hasError('required')">Required dob</span>
+            </div>
+            <div class="form-group col-sm-12 col-md-8 mb-2">
+              <input type="number" class="form-control" id="number" placeholder="Enter phone number" formControlName="number">
+              <span  class="text-danger" *ngIf="submitFormCheck && formGroup.controls['number'].hasError('required')">Required phone number</span>
+              <span  class="text-danger" *ngIf="submitFormCheck && formGroup.controls['number'].hasError('pattern')">Invalid </span>
+
+            </div>
+            <div class="form-group col-sm-12 col-md-8 mb-2">
+              <input type="text" class="form-control" id="email" placeholder="Enter Email" formControlName="email">
+              <span  class="text-danger" *ngIf="submitFormCheck && formGroup.controls['email'].hasError('required')">Required Email</span>
+              <span  class="text-danger" *ngIf="submitFormCheck && formGroup.controls['email'].hasError('pattern')">Invalid Email</span></div>
+       </div>
+       <button type="submit" class="btn btn-primary">Register</button>
+  </form>
+</div>
+
